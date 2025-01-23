@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Chasse aux Trésors</title>
+  <link rel="stylesheet" href="administrateur.css">
+</head>
+<body>
+  <header>
+    <h1>Tableau de bord Admin</h1>
+    <nav>
+      <ul>
+        <li><a href="#chasses">Gérer les Chasses</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Gérer les Chasses -->
+    <section id="chasses">
+      <h2>Créer une Nouvelle Chasse</h2>
+
+      <!-- Formulaire pour créer une chasse -->
+      <form id="createChasseForm">
+        <label for="chasseName">Nom de la chasse :</label>
+        <input type="text" id="chasseName" name="chasseName" required>
+        <button type="submit">Créer Chasse</button>
+      </form>
+
+      <!-- Formulaire pour ajouter des indices -->
+      <div id="indiceSection" style="display: none;">
+        <h3>Ajouter des Indices à la Chasse : <span id="currentChasseName"></span></h3>
+        <form id="addIndiceForm">
+          <label for="indiceName">Nom de l'indice :</label>
+          <input type="text" id="indiceName" name="indiceName" required>
+
+          <label for="indiceLocation">Lieu de l'indice :</label>
+          <input type="text" id="indiceLocation" name="indiceLocation" required>
+
+          <button type="submit">Ajouter Indice</button>
+        </form>
+
+        <ul id="indiceList">
+          <!-- Liste dynamique des indices -->
+        </ul>
+
+        <button id="finishChasse" style="display: none;">Terminer la Chasse</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Gestion Chasse aux Trésors</p>
+  </footer>
+
+  <script src="administrateur.js"></script>
+</body>
+</html>

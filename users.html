@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste des Utilisateurs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Liste des Utilisateurs</h1>
+    <p id="status">Chargement...</p>
+    <ul id="user-list">
+      <!-- Les utilisateurs seront affichés ici -->
+    </ul>
+  </div>
+
+  <script>
+    // Fonction pour récupérer et afficher les utilisateurs
+    async function fetchUsers() {
+      const status = document.getElementById('status');
+      const userList = document.getElementById('user-list');
+      try {
+        const response = await fetch('http://localhost:3000/users');
+        const data = await response.json();
+
+        if (response.ok) {
+          const users = data.users;
+
+          if (users.length === 0) {
+            status.textContent = 'Aucun utilisateur trouvé.';
+            return;
+          }
+
+          status.textContent = '';
+          users.forEach(user => {
+            const li = document.createElement('li');
+            li.textContent = `Nom: ${user.name}, Email: ${user.email}`;
+            userList.appendChild(li);
+          });
+        } else {
+          status.textContent = data.message || 'Erreur lors du chargement des utilisateurs.';
+        }
+      } catch (error) {
+        console.error('Erreur :', error);
+        status.textContent = 'Erreur de connexion au serveur.';
+      }
+    }
+
+    // Charger les utilisateurs au démarrage
+    fetchUsers();
+  </script>
+</body>
+</html>

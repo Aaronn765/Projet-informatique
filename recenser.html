@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recenser les Chasses et Équipes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #555;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      margin: 5px 0;
+      background: #f4f4f4;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .error {
+      color: red;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .member-list, .indice-list {
+      margin-left: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    .qr-code {
+      margin: 10px 0;
+      text-align: center;
+    }
+    img {
+      width: 150px;
+      height: auto;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Recenser les Chasses et Équipes</h1>
+
+    <!-- Section pour les chasses -->
+    <div class="section">
+      <h2>Chasses Disponibles</h2>
+      <p id="status-chasses">Chargement des chasses...</p>
+      <ul id="chasse-list">
+        <!-- Les chasses disponibles seront affichées ici -->
+      </ul>
+    </div>
+
+    <!-- Section pour les équipes -->
+    <div class="section">
+      <h2>Équipes Disponibles</h2>
+      <p id="status-teams">Chargement des équipes...</p>
+      <ul id="team-list">
+        <!-- Les équipes disponibles seront affichées ici -->
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Fonction pour récupérer et afficher les chasses disponibles
+    async function fetchChasses() {
+      const statusChasses = document.getElementById('status-chasses');
+      const chasseList = document.getElementById('chasse-list');
+
+      try {
+        const response = await fetch('http://localhost:3000/chasses');
+        const data = await response.json();
+
+        if (response.ok) {
+          const chasses = data.chasses;
+
+          if (chasses.length === 0) {
+            statusChasses.textContent = 'Aucune chasse disponible.';
+            return;
+          }
+
+          statusChasses.textContent = '';
+          chasses.forEach(chasse => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <strong>Nom :</strong> ${chasse.name}
+              <ul class="indice-list">
+                ${chasse.indices
+                  .map(
+                    indice => `
+                    <li>
+                      <strong>Indice :</strong> ${indice.name}, 
+                      <strong>Lieu :</strong> ${indice.location}
+                      <div class="qr-code">
+                        <img src="${indice.qrCode}" alt="QR Code pour ${indice.name}">
+                      </div>
+                    </li>`
+                  )
+                  .join('')}
+              </ul>
+            `;
+            chasseList.appendChild(li);
+          });
+        } else {
+          statusChasses.textContent = data.message || 'Erreur lors du chargement des chasses.';
+        }
+      } catch (error) {
+        console.error('Erreur :', error);
+        statusChasses.textContent = 'Erreur de connexion au serveur.';
+      }
+    }
+
+    // Fonction pour récupérer et afficher les équipes disponibles
+    async function fetchTeams() {
+      const statusTeams = document.getElementById('status-teams');
+      const teamList = document.getElementById('team-list');
+
+      try {
+        const response = await fetch('http://localhost:3000/teams');
+        const data = await response.json();
+
+        if (response.ok) {
+          const teams = data.teams;
+
+          if (teams.length === 0) {
+            statusTeams.textContent = 'Aucune équipe disponible.';
+            return;
+          }
+
+          statusTeams.textContent = '';
+          teams.forEach(team => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <strong>Nom :</strong> ${team.name}, 
+              <strong>Nombre de membres :</strong> ${team.members.length}
+              <ul class="member-list">
+                ${team.members.map(member => `<li>Nom du membre : ${member.name}</li>`).join('')}
+              </ul>
+            `;
+            teamList.appendChild(li);
+          });
+        } else {
+          statusTeams.textContent = data.message || 'Erreur lors du chargement des équipes.';
+        }
+      } catch (error) {
+        console.error('Erreur :', error);
+        statusTeams.textContent = 'Erreur de connexion au serveur.';
+      }
+    }
+
+    // Appeler les fonctions pour charger les données
+    fetchChasses();
+    fetchTeams();
+  </script>
+</body>
+</html>

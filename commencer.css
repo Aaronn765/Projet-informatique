@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #343434);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    color: #ffc107;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+  }
+  
+  .options {
+    margin: 20px 0;
+    text-align: left;
+  }
+  
+  .options label {
+    font-size: 1rem;
+    display: block;
+    margin: 15px 0;
+    color: #d4af37;
+  }
+  
+  /* Styles pour le champ de texte "Nom de l'équipe" */
+  .options input[type="text"],
+  .options select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    background: #2c2c2c;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .options input[type="text"]:focus,
+  .options select:focus {
+    border-color: #ffc107;
+  }
+  
+  .actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .actions button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .actions .confirm {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .actions .confirm:hover {
+    background-color: #ffd54f;
+    transform: translateY(-3px);
+  }
+  
+  .actions .cancel {
+    background-color: #ff4d4d;
+    color: #ffffff;
+  }
+  
+  .actions .cancel:hover {
+    background-color: #ff6666;
+    transform: translateY(-3px);
+  }
+  
+  .invite-section {
+    margin-top: 30px;
+    text-align: left;
+  }
+  
+  .invite-section h3 {
+    color: #ffc107;
+    margin-bottom: 10px;
+  }
+  
+  .invite-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border: 1px solid #d4af37;
+    border-radius: 5px;
+    background: #2c2c2c;
+    color: #fff;
+    outline: none;
+  }
+  
+  .invite-section button {
+    padding: 10px 20px;
+    background-color: #ffc107;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .invite-section button:hover {
+    background-color: #ffd54f;
+    transform: translateY(-3px);
+  }
+  

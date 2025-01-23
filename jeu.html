@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Équipe</title>
+  <link rel="stylesheet" href="jeu.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Mon Équipe</h1>
+
+    <!-- Informations de l'équipe -->
+    <div class="team-info">
+      <h2>Nom de l'équipe : <span id="team-name">Chargement...</span></h2>
+      <h3>Nombre de participants : <span id="participant-count">0</span></h3>
+    </div>
+
+    <!-- Lien pour rejoindre l'équipe -->
+    <div class="join-link">
+      <h3>Lien pour rejoindre l'équipe :</h3>
+      <a id="team-link" href="#">Chargement...</a>
+    </div>
+
+    <!-- Liste des chasses disponibles -->
+    <div class="chasses">
+      <h3>Liste des Chasses Disponibles :</h3>
+      <ul id="chasse-list">
+        <!-- Les chasses seront ajoutées ici dynamiquement -->
+      </ul>
+    </div>
+
+    <!-- Liste des participants -->
+    <div class="participants">
+      <h3>Liste des participants :</h3>
+      <ul id="participant-list">
+        <!-- Les participants seront ajoutés ici dynamiquement -->
+      </ul>
+    </div>
+
+    <!-- Statut -->
+    <div class="status">
+      <h3>Statut :</h3>
+      <p id="status">Chargement...</p>
+    </div>
+
+    <!-- Boutons d'actions -->
+    <div class="actions">
+      <button class="cancel" onclick="window.location.href='index.html'">Retour à l'accueil</button>
+    </div>
+  </div>
+
+  <script src="jeu.js"></script>
+</body>
+</html>

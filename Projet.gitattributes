@@ -1,0 +1,8 @@
+# Force LF pour les fichiers texte
+* text=auto
+
+# Assurez-vous que les fichiers .sh ont des fins de ligne LF
+*.sh text eol=lf
+
+# Assurez-vous que les fichiers Windows utilisent CRLF
+*.bat text eol=crlf

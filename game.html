@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Page</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Chasse au Trésor</h1>
+    <p id="current-indice"></p>
+    <p id="current-location"></p>
+    <button id="scan-qr">Scanner le code QR</button>
+    <p id="game-status"></p>
+    <div id="qr-reader" style="width: 500px; display: none;"></div>
+  </div>
+
+  <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

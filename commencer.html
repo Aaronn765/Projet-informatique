@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commencer une Chasse</title>
+  <link rel="stylesheet" href="commencer.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Créer ou Rejoindre une Équipe</h1>
+    <p>Créez votre équipe ou rejoignez une équipe existante pour participer à une chasse au trésor.</p>
+
+    <!-- Formulaire de création d'équipe -->
+    <div class="options">
+      <h2>Créer une Équipe</h2>
+      <label for="team-name">
+        <strong>Nom de l'équipe :</strong>
+      </label>
+      <input type="text" id="team-name" placeholder="Entrez le nom de votre équipe" required>
+      <button class="confirm" id="create-button">Créer l'équipe</button>
+    </div>
+
+    <hr>
+
+    <!-- Formulaire pour rejoindre une équipe -->
+    <div class="options">
+      <h2>Rejoindre une Équipe</h2>
+      <label for="team-code">
+        <strong>Code de l'équipe :</strong>
+      </label>
+      <input type="text" id="team-code" placeholder="Entrez le code de l'équipe" required>
+      <button class="confirm" id="join-button">Rejoindre l'équipe</button>
+    </div>
+
+    <!-- Section pour afficher les erreurs -->
+    <div id="error-section" style="display: none; color: red;">
+      <p id="error-message"></p>
+    </div>
+  </div>
+
+  <!-- Script principal -->
+  <script src="commencer.js"></script>
+</body>
+</html>

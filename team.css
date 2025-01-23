@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #0e0e0e, #1c1c1c);
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d4af37;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .header .nav {
+    display: flex;
+  }
+  
+  .header .nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.2s;
+  }
+  
+  .header .nav a:hover {
+    color: #d4af37;
+    transform: scale(1.1);
+  }
+  
+  .container {
+    padding: 100px 20px 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+  
+  .container h1 {
+    font-size: 3rem;
+    color: #d4af37;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+  }
+  
+  .container p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 30px;
+  }
+  
+  .container ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .container ul li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+  
+  .container ul li:hover {
+    transform: scale(1.02);
+    border-color: #d4af37;
+  }
+  
+  .container .progression {
+    font-size: 1.5rem;
+    color: #ffc107;
+    margin-bottom: 20px;
+  }
+  
+  .container .btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #d4af37;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .container .btn:hover {
+    background-color: #ffc107;
+    transform: scale(1.1);
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0e0e0e;
+    color: #888;
+    border-top: 1px solid #444;
+  }
+  
+  .footer a {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  

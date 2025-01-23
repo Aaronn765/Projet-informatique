@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Règles du Jeu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0e0e0e, #1c1c1c);
+      color: #ffffff;
+      overflow-x: hidden; /* Évite les débordements horizontaux */
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .header .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #d4af37;
+    }
+
+    .header .nav {
+      display: none; /* Cache la navigation supplémentaire */
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 100px auto 50px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .content h1 {
+      text-align: center;
+      color: #d4af37;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .content ul {
+      margin-left: 20px;
+      list-style: disc;
+    }
+
+    .content ul li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0e0e0e;
+      color: #888;
+      border-top: 1px solid #444;
+      position: relative;
+    }
+
+    .footer a {
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">Treasure Hunt</div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>Règles du Jeu</h1>
+    <p>Bienvenue dans Treasure Hunt ! Voici les règles pour vous guider dans votre aventure :</p>
+
+    <h2>Comment jouer :</h2>
+    <ul>
+      <li>Chaque joueur doit s'inscrire ou se connecter pour commencer une chasse.</li>
+      <li>Le jeu consiste à résoudre des énigmes et à trouver des indices pour avancer.</li>
+      <li>Chaque indice vous rapproche du trésor final.</li>
+    </ul>
+
+    <h2>Système de points :</h2>
+    <ul>
+      <li>+10 points pour chaque indice trouvé.</li>
+      <li>-2 points pour chaque utilisation du chatbot pour demander de l'aide.</li>
+    </ul>
+
+    <h2>Équipe et collaboration :</h2>
+    <ul>
+      <li>Vous pouvez jouer seul ou en équipe.</li>
+      <li>Collaborez avec vos coéquipiers pour résoudre les énigmes plus rapidement.</li>
+    </ul>
+
+    <h2>Temps et classement :</h2>
+    <ul>
+      <li>Le temps total de votre partie est pris en compte pour le classement final.</li>
+      <li>Terminez la chasse le plus rapidement possible pour gagner des bonus.</li>
+    </ul>
+
+    <p>Amusez-vous et bonne chance pour trouver le trésor !</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2025 Treasure Hunt. Tous droits réservés.</p>
+    <a href="#">Mentions légales</a> |
+    <a href="#">Conditions d'utilisation</a> |
+    <a href="#">Contact</a>
+  </div>
+
+</body>
+</html>
